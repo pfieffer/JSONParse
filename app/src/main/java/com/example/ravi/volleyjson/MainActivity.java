@@ -81,7 +81,7 @@ public class MainActivity extends AppCompatActivity {
 
                     @Override
                     public void onResponse(JSONObject response) {
-                        Log.d(TAG, response.toString());
+                        Log.d(TAG, response.toString()); //for android log cat??
 
                         try {
                             // Parsing json object response
@@ -135,7 +135,7 @@ public class MainActivity extends AppCompatActivity {
                         Log.d(TAG,response.toString());
 
                         try{
-                            //parsing json raay response
+                            //parsing json array response
                             //loop through each json object
                             jsonResponse = "";
                             for(int i = 0; i<response.length();i++){
@@ -151,9 +151,8 @@ public class MainActivity extends AppCompatActivity {
                                 jsonResponse += "Home: " + home + "\n\n";
                                 jsonResponse += "Mobile: " + mobile + "\n\n\n";
 
-                        }
+                            }
                         txtResponse.setText(jsonResponse);
-
                     } catch(JSONException e)
                         {
                             e.printStackTrace();
